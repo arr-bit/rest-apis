@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>ARR Official — REST API</title>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+
+  <div class="page">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <img src="url" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+        <div class="brand-text">
+          <span class="brand-name">ARR Official</span>
+          <span class="brand-sub">REST API</span>
+        </div>
+      </div>
+      <div class="nav-right">
+        <span class="status-dot"></span>
+        <span class="status-text">ONLINE</span>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="home">
+      <div class="hero-label">
+        <span class="label-line"></span>
+        <span>ARR OFFICIAL / v1.0</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">REST</span>
+        <span class="title-line accent">API.</span>
+      </h1>
+      <p class="hero-sub">Kumpulan endpoint gratis untuk bot, aplikasi, dan eksperimen developer Indonesia.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" id="jam">--:--:--</span>
+          <span class="stat-label">WAKTU</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" id="tanggal">--/--/----</span>
+          <span class="stat-label">TANGGAL</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <!-- Diisi otomatis oleh script.js dari /api/endpoints -->
+          <span class="stat-num" id="stat-endpoints">...</span>
+          <span class="stat-label">ENDPOINT</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <!-- Section: Daftar API -->
+      <div class="section-intro" id="apis">
+        <span class="section-index">02</span>
+        <div>
+          <h2 class="section-title">Daftar API</h2>
+          <p class="section-desc">Pilih endpoint lalu klik <strong>Try</strong> untuk test langsung.</p>
+        </div>
+      </div>
+
+      <!--
+        ╔══════════════════════════════════════════════════════════════╗
+        ║  ACCORDION DI-RENDER OTOMATIS OLEH script.js                ║
+        ║  Sumber data: GET /api/endpoints                            ║
+        ║  Untuk tambah endpoint baru:                                ║
+        ║    1. Buat file di folder ai/ berita/ dl/ search/           ║
+        ║    2. Tambahkan module.exports.meta = { ... }               ║
+        ║    3. Tidak perlu edit HTML ini sama sekali!                 ║
+        ╚══════════════════════════════════════════════════════════════╝
+      -->
+      <div id="accordion-container">
+        <!-- Loading state -->
+        <div class="coming-soon" style="padding: 48px 0">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="spin-icon">
+            <circle cx="12" cy="12" r="9" stroke-dasharray="20 40"/>
+          </svg>
+          <p>Memuat endpoint...</p>
+        </div>
+      </div>
+
+      <!-- Docs Section -->
+      <div class="docs-section" id="docs">
+        <div class="doc-block">
+          <div class="section-intro" style="margin-bottom:20px">
+            <span class="section-index">03</span>
+            <div><h2 class="section-title">Penggunaan</h2></div>
+          </div>
+          <p class="doc-text">Kirim <strong>GET request</strong> ke endpoint dengan parameter:</p>
+          <div class="code-wrap">
+            <div class="code-topbar"><span class="code-lang">PARAMS</span></div>
+            <pre>message: Isi permintaan kamu</pre>
+          </div>
+        </div>
+
+        <div class="doc-block">
+          <div class="section-intro" style="margin-bottom:20px">
+            <span class="section-index">04</span>
+            <div><h2 class="section-title">Format Respons</h2></div>
+          </div>
+          <p class="doc-text">Semua endpoint mengembalikan <strong>JSON</strong>:</p>
+          <div class="code-wrap">
+            <div class="code-topbar">
+              <span class="code-lang">JSON</span>
+              <div class="code-dots"><span></span><span></span><span></span></div>
+            </div>
+            <pre>{
+  "status": 200,
+  "creator": "ARR Official",
+  "data": {
+    "response": "Hasil respons permintaan kamu"
+  }
+}</pre>
+          </div>
+        </div>
+
+        <div class="doc-block">
+          <div class="section-intro" style="margin-bottom:20px">
+            <span class="section-index">05</span>
+            <div><h2 class="section-title">Test </h2></div>
+          </div>
+          <p class="doc-text"><code></code></p>
+          <div class="code-wrap copyable">
+            <div class="code-topbar">
+              <span class="code-lang">JAVASCRIPT</span>
+              <button class="copy-code-btn" id="copyButton">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy
+              </button>
+            </div>
+            <pre id="codeBlock"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Donasi -->
+      <div class="donasi-section" id="donate">
+        <div class="section-intro" style="margin-bottom:24px">
+          <span class="section-index">06</span>
+          <div><h2 class="section-title">Donasi</h2></div>
+        </div>
+        <p class="doc-text">Jika API ini bermanfaat, kamu bisa support pengembangan lewat Dana:</p>
+        <div class="dana-card">
+          <div class="dana-logo">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#108EE9"/><text x="50%" y="56%" text-anchor="middle" fill="white" font-size="13" font-weight="700" font-family="sans-serif" dy=".1em">dana</text></svg>
+            <span>Dana</span>
+          </div>
+          <div class="dana-number">085262562560</div>
+          <div class="dana-name">ARR Official</div>
+          <button class="copy-dana-btn" id="copyDanaBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Salin Nomor
+          </button>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer" id="about">
+      <div class="footer-inner">
+        <div class="footer-brand">ARR Official</div>
+        <div class="footer-wm">made with <span class="heart">♥</span> — ARR Official 2026</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Dock Navigation -->
+  <nav class="dock" id="dock" aria-label="Navigasi utama">
+    <div class="dock-liquid" id="dockLiquid"></div>
+    <div class="dock-bubble" id="dockBubble"></div>
+    <div class="dock-tooltip" id="dockTooltip"></div>
+
+    <a class="dock-item active" href="#home" data-label="Home" data-index="0">
+      <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
+    </a>
+    <a class="dock-item" href="#docs" data-label="Docs" data-index="1">
+      <svg viewBox="0 0 24 24"><path d="M3 5a1.5 1.5 0 0 1 1.5-1.5H11V20H4.5A1.5 1.5 0 0 1 3 18.5Z"/><path d="M21 5a1.5 1.5 0 0 0-1.5-1.5H13V20h6.5A1.5 1.5 0 0 0 21 18.5Z"/></svg>
+    </a>
+    <a class="dock-item" href="#apis" data-label="APIs" data-index="2">
+      <svg viewBox="0 0 24 24"><path d="M13 2 4 13.5h6.5L11 22l9-11.5h-6.5Z"/></svg>
+    </a>
+    <a class="dock-item" href="#donate" data-label="Donate" data-index="3">
+      <svg viewBox="0 0 24 24"><path d="M12 20.5S3 15.2 3 9.2C3 6 5.4 4 8 4c1.8 0 3.2.9 4 2.4C12.8 4.9 14.2 4 16 4c2.6 0 5 2 5 5.2 0 6-9 11.3-9 11.3Z"/></svg>
+    </a>
+    <a class="dock-item" href="#about" data-label="About" data-index="4">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c.7-3.6 4-5.5 7.5-5.5s6.8 1.9 7.5 5.5"/></svg>
+    </a>
+
+    <!-- moving reflection, mirrors the dock items below the bar -->
+    <div class="dock-reflection" id="dockReflection" aria-hidden="true">
+      <div class="dock-item-r"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg></div>
+      <div class="dock-item-r"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a1.5 1.5 0 0 1 1.5-1.5H11V20H4.5A1.5 1.5 0 0 1 3 18.5Z"/><path d="M21 5a1.5 1.5 0 0 0-1.5-1.5H13V20h6.5A1.5 1.5 0 0 0 21 18.5Z"/></svg></div>
+      <div class="dock-item-r"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 13.5h6.5L11 22l9-11.5h-6.5Z"/></svg></div>
+      <div class="dock-item-r"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5S3 15.2 3 9.2C3 6 5.4 4 8 4c1.8 0 3.2.9 4 2.4C12.8 4.9 14.2 4 16 4c2.6 0 5 2 5 5.2 0 6-9 11.3-9 11.3Z"/></svg></div>
+      <div class="dock-item-r"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c.7-3.6 4-5.5 7.5-5.5s6.8 1.9 7.5 5.5"/></svg></div>
+    </div>
+  </nav>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
